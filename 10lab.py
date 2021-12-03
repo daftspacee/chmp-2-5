@@ -1,16 +1,23 @@
 import matplotlib.pyplot as plt
+
 from numpy import *
+
 from scipy.interpolate import UnivariateSpline
 
-x = [1, 1.3, 1.7, 2.2, 2.8]
-y = [2.95, 3.89, 1.46, 3.38, 2.34]
+  
+
+x = [0,0.2,0.5,0.9,1.5]
+
+y = [1.75,2.68,1.24,0.72,1.35]
+
+  
 
 spl = UnivariateSpline(x,y)
-xs = linspace(-5, 10, 1000)
 
-plt.grid()
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Spline Interpolation')
-plt.plot(x, y, 'ro' , xs, spl(xs), 'b' )
+xs = linspace(-2, 2, 100)
+
+  
+
+plt.plot(x,y, 'ro',xs,spl(xs), 'g')
+
 plt.show()
